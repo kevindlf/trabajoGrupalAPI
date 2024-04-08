@@ -50,5 +50,5 @@ function displayMenu(menuData) {
     menuTable.innerHTML = html;
 }
 
-// Call cargarDatos and then displayMenu
+// Llama a la función cargarDatos
 cargarDatos().then(datos => displayMenu(datos));
