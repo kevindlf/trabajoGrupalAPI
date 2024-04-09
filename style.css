@@ -1,0 +1,30 @@
+
+body{
+    background-color: #472B31 !important;
+    color: white !important;
+}
+
+
+h1{
+    
+    text-align: center;
+    color: white !important;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#menu-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

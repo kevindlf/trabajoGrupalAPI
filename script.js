@@ -21,7 +21,7 @@ function displayMenu(menuData) {
                 <th>TRAGO</th>
                 <th>INGREDIENTES</th>
                 <th>INSTRUCCIONES</th>
-                <th>IMAGEN</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
