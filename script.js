@@ -12,7 +12,7 @@ const cargarDatos = async () => {
 
 // Función para traducir texto con Google Translate
 async function translateText(text) {
-    const response = await fetch('https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|es');
+    const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|es`);
     const data = await response.json();
     return data.responseData.translatedText;
 }
@@ -20,7 +20,7 @@ async function translateText(text) {
 // Define displayMenu function para la promesa cargarDatos
 async function displayMenu(menuData) {
     const menuTable = document.getElementById('menu-table'); // Corregido el ID de la tabla
-    const menuItems = menuData.drinks; // Suponiendo que "drinks" es la clave que contiene el array de bebidas
+    const menuItems =    menuData.drinks; // Suponiendo que "drinks" es la clave que contiene el array de bebidas
       
     let html = `
         <thead>
@@ -28,7 +28,7 @@ async function displayMenu(menuData) {
                 <th>TRAGO</th>
                 <th>INGREDIENTES</th>
                 <th>INSTRUCCIONES</th>
-                <th>IMAGEN</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
