@@ -10,8 +10,15 @@ const cargarDatos = async () => {
     }
 };
 
+// Función para traducir texto con Google Translate
+async function translateText(text) {
+    const response = await fetch('https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|es');
+    const data = await response.json();
+    return data.responseData.translatedText;
+}
+
 // Define displayMenu function para la promesa cargarDatos
-function displayMenu(menuData) {
+async function displayMenu(menuData) {
     const menuTable = document.getElementById('menu-table'); // Corregido el ID de la tabla
     const menuItems = menuData.drinks; // Suponiendo que "drinks" es la clave que contiene el array de bebidas
       
@@ -21,34 +28,38 @@ function displayMenu(menuData) {
                 <th>TRAGO</th>
                 <th>INGREDIENTES</th>
                 <th>INSTRUCCIONES</th>
-                <th></th>
+                <th>IMAGEN</th>
             </tr>
         </thead>
         <tbody>
     `;
       
-    menuItems.forEach(item => {
+    for (const item of menuItems) {
          // Filtrar ingredientes para eliminar los que son null
          const ingredients = Object.keys(item)
          .filter(key => key.startsWith('strIngredient') && item[key] !== null)
          .map(key => item[key]);
      
-     // Unir los ingredientes en una cadena separada por espacios
-     const ingredientList = ingredients.join(' <br>');
+         // Unir los ingredientes en una cadena separada por espacios
+         const ingredientList = ingredients.join(' <br>');
+        
+         // Traducir las instrucciones a español
+         const translatedInstructions = await translateText(item.strInstructions);
+        
         html += `
             <tr>
                 <td>${item.strDrink}</td>
                 <td>${ingredientList}</td>
-                <td>${item.strInstructions}</td>
+                <td>${translatedInstructions}</td>
                 <td><img src="${item.strDrinkThumb}" alt="${item.strDrink}" style="max-width: 100px; max-height: 100px;"></td>
             </tr>
         `;
-    });
+    }
       
-    html += `</tbody>`;
+    html += '</tbody>';
       
     menuTable.innerHTML = html;
 }
 
-// Llama a la función cargarDatos
+// Llama a la función cargarDatos y muestra el menú
 cargarDatos().then(datos => displayMenu(datos));
