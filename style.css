@@ -44,6 +44,9 @@ h1{
 /* Estilos para los encabezados de la tabla */
 #menu-table th {
     font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 
 /*Bordes de la tabla*/

@@ -4,6 +4,7 @@ const cargarDatos = async () => {
         const res = await fetch(url);
         const datos = await res.json();
         return datos;
+
     } catch (err) {
         console.log(err);
     }
@@ -39,11 +40,13 @@ async function displayMenu(menuData) {
                 <th>INGREDIENTES</th>
                 <th>INSTRUCCIONES</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
     `;
       
+    for (const item of menuItems) {
     for (const item of menuItems) {
          // Filtrar ingredientes para eliminar los que son null
          const ingredients = Object.keys(item)
@@ -61,11 +64,14 @@ async function displayMenu(menuData) {
                 <td>${item.strDrink}</td>
                 <td>${ingredientList}</td>
                 <td>${translatedInstructions}</td>
+                <td>${translatedInstructions}</td>
                 <td><img src="${item.strDrinkThumb}" alt="${item.strDrink}" style="max-width: 100px; max-height: 100px;"></td>
             </tr>
         `;
     }
+    }
       
+    html += '</tbody>';
     html += '</tbody>';
       
     menuTable.innerHTML = html;
