@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicia el carrusel automáticamente utilizando métodos de Bootstrap
+    new bootstrap.Carousel(document.getElementById('carouselTragos'), {
+        interval: 3000 // Intervalo de 3 segundos entre cada diapositiva
+    }); 
+
+    // Controla el cambio automático de las imágenes cada 3 segundos
+    setInterval(function() {
+        document.querySelector('#carouselTragos .carousel-control-next').click();
+    }, 3000);
+});
+
 const cargarDatos = async () => {
     try {
         const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
