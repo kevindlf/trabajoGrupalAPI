@@ -9,13 +9,58 @@ h1{
     
     text-align: center;
     color: white !important;
+<<<<<<< Updated upstream
+=======
+    font-family: 'Time New Roman', Times, serif;
+}
+
+#carouselTragos{
+    margin-bottom: 20px;
+}
+.carousel-item {
+    transition: transform 0.1s ease;
+    overflow: hidden; /* Para ocultar cualquier parte de la imagen que se deslice fuera del contenedor */
+}
+.carousel-item.active {
+    transform: translateX(0%);
+}
+.carousel-item-next {
+    transform: translateX(0%); /* Mueve la siguiente imagen parcialmente dentro del contenedor */
+}
+.carousel-item-prev {
+    transform: translateX(-0%); /* Mueve la imagen anterior parcialmente dentro del contenedor */
+}
+#carouselTragos img {
+    width: 200px;
+    height: 700px; /* Ajusta la altura según sea necesario */
+}
+
+#menu-table {
+    width: 95%; /* Ancho de la tabla */
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+    margin: 0 auto; 
+    margin-bottom: 20px; /* Agrega espacio debajo del elemento */   
+}
+
+/* Estilos para los encabezados de la tabla */
+#menu-table th {
+>>>>>>> Stashed changes
     font-family: 'Times New Roman', Times, serif;
 }
 
+<<<<<<< Updated upstream
 
 #menu-table td {
     border: 1px solid #ccc;
     padding: 8px;
+=======
+/*Bordes de la tabla*/
+#menu-table td {
+    border: 2px solid #ccc;
+    padding: 4px;
+    font-family: 'Century', Times, serif;
+
+>>>>>>> Stashed changes
 }
 
 footer {
