@@ -46,7 +46,7 @@ async function displayMenu(menuData) {
         <tbody>
     `;
       
-    for (const item of menuItems) {
+   
     for (const item of menuItems) {
          // Filtrar ingredientes para eliminar los que son null
          const ingredients = Object.keys(item)
@@ -68,9 +68,9 @@ async function displayMenu(menuData) {
             </tr>
         `;
     }
-    }
+    
       
-    html += '</tbody>';
+    
     html += '</tbody>';
       
     menuTable.innerHTML = html;
