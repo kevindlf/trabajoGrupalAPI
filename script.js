@@ -40,7 +40,6 @@ async function displayMenu(menuData) {
                 <th>INGREDIENTES</th>
                 <th>INSTRUCCIONES</th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -68,9 +67,7 @@ async function displayMenu(menuData) {
             </tr>
         `;
     }
-    
-      
-    
+   
     html += '</tbody>';
       
     menuTable.innerHTML = html;
