@@ -1,35 +1,23 @@
 
-/*Color de  fondo y letras */
 body{
     background-color: #472B31 !important;
     color: white !important;
 }
 
-/*Color, letra y centrar de titulo*/
+
 h1{
     
     text-align: center;
     color: white !important;
-    font-family: 'Time New Roman', Times, serif;
-}
-
-/* Estilos para los encabezados de la tabla */
-#menu-table th {
     font-family: 'Times New Roman', Times, serif;
-    color: white;
-    font-weight: bold;
-    text-align: center;
 }
 
-/*Bordes de la tabla*/
+
 #menu-table td {
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     padding: 8px;
-    font-family: 'Century', Times, serif;
-
 }
 
-/*Pie de página*/
 footer {
     background-color: white;
     color: black;
