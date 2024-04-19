@@ -63,8 +63,7 @@ async function displayMenu(menuData) {
             <tr>
                 <td>${item.strDrink}</td>
                 <td>${ingredientList}</td>
-                <td>${translatedInstructions}</td>
-                <td>${translatedInstructions}</td>
+                <td>${translatedInstructions}</td>                
                 <td><img src="${item.strDrinkThumb}" alt="${item.strDrink}" style="max-width: 100px; max-height: 100px;"></td>
             </tr>
         `;
